@@ -1,25 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class LinearGraph extends Component {
-
-    state = {
-        data: ''
-   }
-
-   componentDidUpdate(prevProps, prevState){
-       if(prevProps.data !== this.props.data) {
-           this.setState({
-               data: this.props.data
-           })
-       }
-   }
-    render() {
-        return (
-            <div>
-             
-            </div>
-        )
-    }
+function LinearGraph() {
+    return (
+        <div>
+            This is a linear graph
+        </div>
+    )
 }
 
-export default LinearGraph
+export default LinearGraph;

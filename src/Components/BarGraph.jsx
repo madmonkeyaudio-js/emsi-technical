@@ -1,24 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class BarGraph extends Component {
-    state = {
-        data: ''
-   }
-
-   componentDidUpdate(prevProps, prevState){
-       if(prevProps.data !== this.props.data) {
-           this.setState({
-               data: this.props.data
-           })
-       }
-   }
-    render() {
-        return (
-            <div>
-             
-            </div>
-        )
-    }
+function BarGraph() {
+    return (
+        <div>
+            This is a bar graph
+        </div>
+    )
 }
 
-export default BarGraph
+export default BarGraph;

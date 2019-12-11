@@ -1,33 +1,31 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 
-class Summary extends Component {
+const Summary = (props) => {
 
-   state = {
-        data: {}
-   }
+    console.log("❌", props)
 
-   componentDidUpdate(prevProps, prevState){
-       if(prevProps.data !== this.props.data) {
-           this.setState({
-               data: this.props.data
-           })
-           console.log(this.props.data)
-       }
-   }
-    render() {
-        return (
-            <div className="summary-container">
-                <div className="summary-section">
-                
+    if (!props.data.jobs) { return <div><p>Content Unavailables</p></div>}
+
+    return (
+        <div className="summary-container">
+            <div className="summary-section">
+                {props.data.jobs ? props.data.jobs.regional : "Props failed"}
+                <div>Jobs in {props.data.jobs.year}</div>
+                <div>
+                {props.data.jobs? Math.floor((props.data.jobs.regional/props.data.jobs.national_avg)*100) : 'Props failed'} <p>% above national average</p>
                 </div>
-                <div className="vertical-divider"></div>
-                <div className="summary-section"></div>
-                <div className="vertical-divider"></div>
-                <div className="summary-section"></div>
+
             </div>
-        )
-    }
+            <div className="vertical-divider"></div>
+            <div className="summary-section">
+
+            </div>
+            <div className="vertical-divider"></div>
+            <div className="summary-section"></div>
+        </div>
+    )
 }
+
 
 export default Summary
