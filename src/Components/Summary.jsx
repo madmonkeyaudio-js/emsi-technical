@@ -15,7 +15,6 @@ const Summary = (props) => {
                 <div>
                 {props.data.jobs? Math.floor((props.data.jobs.regional/props.data.jobs.national_avg)*100) : 'Props failed'} <p>% above national average</p>
                 </div>
-
             </div>
             <div className="vertical-divider"></div>
             <div className="summary-section">
