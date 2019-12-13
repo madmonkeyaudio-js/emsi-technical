@@ -12,11 +12,11 @@ I was able to figure out most of what Victory Charts does, however, one data ent
 
 The other major improvement needed is refactoring. So far the cleanest component is the BarGraph component. 
 
-![browse page](./src/images/screen1.png)
+![browse page](./src/images/screenshot1.png)
 
-![browse page](./src/images/screen2.png)
+![browse page](./src/images/screenshot2.png)
 
-![browse page](./src/images/screen3.png)
+![browse page](./src/images/screenshot3.png)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
