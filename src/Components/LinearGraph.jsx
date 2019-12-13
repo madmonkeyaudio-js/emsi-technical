@@ -51,7 +51,7 @@ function LinearGraph(props) {
             <h3>Regional Trends</h3>
                 <VictoryChart
                     theme={VictoryTheme.material}
-                    height={200}>
+                    height={150}>
                 <VictoryLine
                     categories={{}}
                     style={{
@@ -78,16 +78,18 @@ function LinearGraph(props) {
             </div>
             <div className="linear-graph-compare">
                 <div className="label">
-                    <div className="label-primary">Region</div>
                     <div className="linear-grid-section">
-                        <h3>2013 Jobs</h3>
-                        <h3>2018 Jobs</h3>
-                        <h3>Percent</h3>
-                        <h3>Percent Change</h3>
+                        <h3>Region</h3>
+                        <div className="trend-details">
+                            <h3>2013 Jobs</h3>
+                            <h3>2018 Jobs</h3>
+                            <h3>Percent</h3>
+                            <h3>Percent Change</h3>
+                        </div>
                     </div>
                     <div className="linear-grid-section">
                         <div>
-                            <h3>Region</h3>
+                            <h5>Region</h5>
                         </div>
                         <div className="trend-details">
                             <p>{props.trendCompReg[0]}</p>
@@ -98,7 +100,7 @@ function LinearGraph(props) {
                     </div>
                     <div className="linear-grid-section">
                         <div>
-                            <h3>State</h3>
+                            <h5>State</h5>
                         </div>
                         <div className="trend-details">
                             <p>{props.trendCompState[0]}</p>
@@ -109,7 +111,7 @@ function LinearGraph(props) {
                     </div>
                     <div className="linear-grid-section">
                         <div>
-                            <h3>Nation</h3>
+                            <h5>Nation</h5>
                         </div>
                         <div className="trend-details">
                             <p>{props.trendCompNation[0]}</p>

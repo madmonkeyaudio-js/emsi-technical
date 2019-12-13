@@ -60,13 +60,12 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  border: 1px solid red;
+  border: 1px solid grey;
 }
 
 .trend-details {
   display: flex;
   justify-content: space-evenly;
-  border: 1px solid black;
   width: 50%;
 }
 
