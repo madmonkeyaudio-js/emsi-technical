@@ -21,8 +21,8 @@ function LinearGraph(props) {
         statePerc = props.statePerc;
         regionPerc = props.regionPerc;
 
-        console.log('DATE RANGE!!!', nationPerc)
 
+        console.log('NATION PERCENTAGE!!!', nationPerc)
         let populateChart = (dateRange, percData, chosenArray) => {
             for(let i = 0; i < dateRange.length; i++) {
                 if(percData[i] !== "NaN"){
@@ -33,12 +33,12 @@ function LinearGraph(props) {
                 } else {
                     chosenArray.push({
                         x: dateRange[i],
-                        y: 0
+                        y: 8.5
                     })
                 }
             }
         }
-        console.log(dateRange, nationPerc, statePerc, regionPerc)
+        console.log( nationPerc, regionPerc)
         populateChart(dateRange, nationPerc, victoryNationData);
         populateChart(dateRange, statePerc, victoryStateData)
         populateChart(dateRange, regionPerc, victoryRegionData)
@@ -53,7 +53,11 @@ function LinearGraph(props) {
                 </div>
                 <VictoryChart
                     theme={VictoryTheme.material}
-                    height={150}>
+                    height={150}
+                    width={250}
+                    style={{
+                        labels: {fontSize: 12}
+                    }}>
                 <VictoryLine
                     categories={{}}
                     style={{
@@ -65,8 +69,7 @@ function LinearGraph(props) {
                     categories={{}}
                     style={{
                     data: { stroke: "#216bf4" },
-                    parent: { border: "1px solid #cbc"}, 
-                    fontSize: 15
+                    parent: { border: "1px solid #cbc"},
                     }}
                     data={victoryStateData}/>
                 <VictoryLine
@@ -77,6 +80,7 @@ function LinearGraph(props) {
                     }}
                     data={victoryRegionData}/>
                 </VictoryChart>
+
             </div>
             <div className="linear-graph-compare">
                 <div className="label">

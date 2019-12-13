@@ -54,7 +54,7 @@ class Content extends Component {
                 stateTrendPerc.push((((stateTrend[j]/stateTrend[0])*100)-100).toFixed(2))
                 nationTrendPerc.push((((nationTrend[j]/nationTrend[0])*100)-100).toFixed(2))
             }
-            
+
             this.setState({
                 occupation: myData.occupation,
                 region: myData.region,
@@ -64,7 +64,7 @@ class Content extends Component {
                 yearRange: yearArray, 
                 regionTrendPerc, 
                 stateTrendPerc, 
-                nationTrendPerc
+                nationTrendPerc, 
             })
         })
         .catch(err => {
