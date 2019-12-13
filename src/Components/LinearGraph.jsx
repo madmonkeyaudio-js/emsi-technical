@@ -42,9 +42,8 @@ function LinearGraph(props) {
         populateChart(dateRange, nationPerc, victoryNationData);
         populateChart(dateRange, statePerc, victoryStateData)
         populateChart(dateRange, regionPerc, victoryRegionData)
+
     }
-
-
 
     return (
         

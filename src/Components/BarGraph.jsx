@@ -6,9 +6,9 @@ function BarGraph(props) {
 
     if (!props.data) { return <div><p>Content Unavailable</p></div>}
     if(props.data){
-       industries = props.data.industries.map(i => {
+       industries = props.data.industries.map((i, idx)=> {
            return (
-               <div className="linear-grid-section">
+               <div key={idx} className="linear-grid-section">
                    <div>
                         {i.title}
                    </div>
@@ -26,7 +26,6 @@ function BarGraph(props) {
                </div>
            )
        })
-       console.log(props.data.industries)
     }
 
 
