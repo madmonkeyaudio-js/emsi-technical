@@ -1,6 +1,6 @@
 ## Instructions
 
-Clone the repo and run 'npm install' upon opening the project to install all required dependencies. 
+Clone the repo and run 'npm install' upon opening the project to install all required dependencies. Then run 'npm start' to open the page.
 
 ## New Technologies Used
 
@@ -8,7 +8,7 @@ I used Formidable's Victory Charts to display the linear graph
 
 ## Overview
 
-I was able to figure out most of what Victory Charts does, however, one data entry within my props returned 'Nan'. After searching for the error and being aware of the time, I hardcoded a base case for that scenario for the graph's y axis (very naughty). Otherwise the data flow seemed to work. I think the lines are squished together because the data is only relative to the last several years. 
+I was able to figure out most of what Victory Charts does, however, one data entry within my props returned 'NaN'. After searching for the error and being aware of the time, I hardcoded a base case for that scenario for the graph's y axis (very naughty). Otherwise the data flow seemed to work. I think the lines are squished together because the data is only relative to the last several years. 
 
 The other major improvement needed is refactoring. So far the cleanest component is the BarGraph component. 
 
