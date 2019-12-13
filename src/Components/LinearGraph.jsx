@@ -79,23 +79,44 @@ function LinearGraph(props) {
             <div className="linear-graph-compare">
                 <div className="label">
                     <div className="label-primary">Region</div>
-                    <div className="label-details">
+                    <div className="linear-grid-section">
                         <h3>2013 Jobs</h3>
                         <h3>2018 Jobs</h3>
                         <h3>Percent</h3>
                         <h3>Percent Change</h3>
                     </div>
-                    <div>
+                    <div className="linear-grid-section">
                         <div>
                             <h3>Region</h3>
                         </div>
                         <div>
-                            <p>{props.trendCompReg ? props.trendCompReg[0] : 'No regional data'}</p>
-                            <p>{props.trendCompReg ? props.trendCompReg[props.trendCompReg.length - 1]: 'No regional data'}</p>
-                            <p>{}</p>
-
+                            <p>{props.trendCompReg[0]}</p>
+                            <p>{props.trendCompReg[props.trendCompReg.length - 1]}</p>
+                            <p>{(props.trendCompReg[props.trendCompReg.length - 1])-props.trendCompReg[0]}</p>
+                            <p>{(((props.trendCompReg[props.trendCompReg.length - 1])-props.trendCompReg[0])/props.trendCompReg[0] * 100).toFixed(2)}</p>
                         </div>
-
+                    </div>
+                    <div className="linear-grid-section">
+                        <div>
+                            <h3>State</h3>
+                        </div>
+                        <div>
+                            <p>{props.trendCompState[0]}</p>
+                            <p>{props.trendCompState[props.trendCompState.length - 1]}</p>
+                            <p>{(props.trendCompState[props.trendCompState.length - 1])-props.trendCompState[0]}</p>
+                            <p>{(((props.trendCompState[props.trendCompState.length - 1])-props.trendCompState[0])/props.trendCompReg[0] * 100).toFixed(2)}</p>
+                        </div>
+                    </div>
+                    <div className="linear-grid-section">
+                        <div>
+                            <h3>Nation</h3>
+                        </div>
+                        <div>
+                            <p>{props.trendCompNation[0]}</p>
+                            <p>{props.trendCompNation[props.trendCompNation.length - 1]}</p>
+                            <p>{(props.trendCompNation[props.trendCompNation.length - 1])-props.trendCompNation[0]}</p>
+                            <p>{(((props.trendCompNation[props.trendCompNation.length - 1])-props.trendCompNation[0])/props.trendCompReg[0] * 100).toFixed(2)}</p>
+                        </div>
                     </div>
                 </div>
             </div>
