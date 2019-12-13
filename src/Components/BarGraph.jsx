@@ -12,11 +12,16 @@ function BarGraph(props) {
                    <div>
                         {i.title}
                    </div>
-                   <div>
-                        {i.in_occupation_jobs}
-                   </div>
-                   <div>
-                       {((i.in_occupation_jobs)/i.jobs * 100).toFixed(1)}%
+                   <div className="trend-details">
+                        <div>
+                                {i.in_occupation_jobs}
+                        </div>
+                        <div>
+                            {(((i.in_occupation_jobs)/props.data.jobs)*100).toFixed(1)}%
+                        </div>
+                        <div>
+                            {((i.in_occupation_jobs)/i.jobs * 100).toFixed(1)}%
+                        </div>
                    </div>
                </div>
            )
@@ -28,8 +33,26 @@ function BarGraph(props) {
 
     return (
         <div className="bargraph">
-            <h3>Industries Employing {props.title}</h3>
-          {industries}
+            <div className="title">
+                <h3>Industries Employing {props.title}</h3>
+            </div>
+            <div className="linear-grid-section">
+                    <div>
+                        <h3>Industry</h3>
+                    </div>
+                    <div className="trend-details">
+                        <h5>
+                            Occupation Jobs In Industry ({props.data.year})
+                        </h5>
+                        <h5>
+                            % of Occupation in Industry ({props.data.year})
+                        </h5>
+                        <h5>
+                            % of Total Jobs in Industry ({props.data.year})
+                        </h5>
+                    </div>
+            </div>
+            {industries}
         </div>
     )
 }

@@ -50,7 +50,9 @@ function LinearGraph(props) {
         
         <div>
             <div className="regional-trend-graph">
-            <h3>Regional Trends</h3>
+                <div className="title">
+                    <h3>Regional Trends</h3>
+                </div>
                 <VictoryChart
                     theme={VictoryTheme.material}
                     height={150}>

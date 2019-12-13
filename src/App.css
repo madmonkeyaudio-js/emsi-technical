@@ -37,6 +37,10 @@
   }
 }
 
+.title {
+  text-align: left;
+}
+
 .summary-container {
   display: flex;
   justify-content: space-between;
