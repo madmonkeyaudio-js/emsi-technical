@@ -89,10 +89,6 @@ class Content extends Component {
       
     }
 
-    trendPercentages = () => {
-
-    }
-
     render() {
         return (
             <div>
@@ -113,7 +109,10 @@ class Content extends Component {
                     trendCompReg={this.state.trendComparison.regional}
                     trendCompState={this.state.trendComparison.state}
                     trendCompNation={this.state.trendComparison.nation}/>
-                <BarGraph data={this.state.employingIndustries}/>
+                <BarGraph 
+                    data={this.state.employingIndustries}
+                    title={this.state.occupation.title}
+                    />
             </div>
         )
     }

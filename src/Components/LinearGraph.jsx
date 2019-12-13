@@ -83,8 +83,8 @@ function LinearGraph(props) {
                         <div className="trend-details">
                             <h3>2013 Jobs</h3>
                             <h3>2018 Jobs</h3>
-                            <h3>Percent</h3>
-                            <h3>Percent Change</h3>
+                            <h3>Change</h3>
+                            <h3>% Change</h3>
                         </div>
                     </div>
                     <div className="linear-grid-section">
