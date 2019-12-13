@@ -85,6 +85,18 @@ function LinearGraph(props) {
                         <h3>Percent</h3>
                         <h3>Percent Change</h3>
                     </div>
+                    <div>
+                        <div>
+                            <h3>Region</h3>
+                        </div>
+                        <div>
+                            <p>{props.trendCompReg ? props.trendCompReg[0] : 'No regional data'}</p>
+                            <p>{props.trendCompReg ? props.trendCompReg[props.trendCompReg.length - 1]: 'No regional data'}</p>
+                            <p>{}</p>
+
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

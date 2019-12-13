@@ -109,7 +109,10 @@ class Content extends Component {
                     yearRange={this.state.yearRange} 
                     statePerc={this.state.stateTrendPerc} 
                     nationPerc={this.state.nationTrendPerc} 
-                    regionPerc={this.state.regionTrendPerc}/>
+                    regionPerc={this.state.regionTrendPerc}
+                    trendCompReg={this.state.trendComparison.regional}
+                    trendCompState={this.state.trendComparison.state}
+                    trendCompNation={this.state.trendComparison.nation}/>
                 <BarGraph data={this.state.employingIndustries}/>
             </div>
         )
