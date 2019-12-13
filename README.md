@@ -13,7 +13,9 @@ I was able to figure out most of what Victory Charts does, however, one data ent
 The other major improvement needed is refactoring. So far the cleanest component is the BarGraph component. 
 
 ![browse page](./src/images/screen1.png)
+
 ![browse page](./src/images/screen2.png)
+
 ![browse page](./src/images/screen3.png)
 
 
