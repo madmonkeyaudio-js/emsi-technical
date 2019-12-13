@@ -52,11 +52,21 @@
 
 .label {
   display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
 .linear-grid-section {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   border: 1px solid red;
+}
+
+.trend-details {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  width: 50%;
 }
 

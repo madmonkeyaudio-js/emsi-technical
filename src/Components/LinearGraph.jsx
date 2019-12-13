@@ -89,7 +89,7 @@ function LinearGraph(props) {
                         <div>
                             <h3>Region</h3>
                         </div>
-                        <div>
+                        <div className="trend-details">
                             <p>{props.trendCompReg[0]}</p>
                             <p>{props.trendCompReg[props.trendCompReg.length - 1]}</p>
                             <p>{(props.trendCompReg[props.trendCompReg.length - 1])-props.trendCompReg[0]}</p>
@@ -100,7 +100,7 @@ function LinearGraph(props) {
                         <div>
                             <h3>State</h3>
                         </div>
-                        <div>
+                        <div className="trend-details">
                             <p>{props.trendCompState[0]}</p>
                             <p>{props.trendCompState[props.trendCompState.length - 1]}</p>
                             <p>{(props.trendCompState[props.trendCompState.length - 1])-props.trendCompState[0]}</p>
@@ -111,7 +111,7 @@ function LinearGraph(props) {
                         <div>
                             <h3>Nation</h3>
                         </div>
-                        <div>
+                        <div className="trend-details">
                             <p>{props.trendCompNation[0]}</p>
                             <p>{props.trendCompNation[props.trendCompNation.length - 1]}</p>
                             <p>{(props.trendCompNation[props.trendCompNation.length - 1])-props.trendCompNation[0]}</p>
