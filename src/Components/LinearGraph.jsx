@@ -23,6 +23,8 @@ function LinearGraph(props) {
         statePerc = props.statePerc;
         regionPerc = props.regionPerc;
 
+        console.log('DATE RANGE!!!', nationPerc)
+
         let populateChart = (dateRange, percData, chosenArray) => {
             for(let i = 0; i < dateRange.length; i++) {
                 if(percData[i] !== "NaN"){
@@ -47,7 +49,7 @@ function LinearGraph(props) {
 
     return (
         
-        <div>
+        <div className="graph-container">
             <div className="regional-trend-graph">
                 <div className="title">
                     <h3>Regional Trends</h3>
@@ -98,7 +100,7 @@ function LinearGraph(props) {
                             <p>{props.trendCompReg[0]}</p>
                             <p>{props.trendCompReg[props.trendCompReg.length - 1]}</p>
                             <p>{(props.trendCompReg[props.trendCompReg.length - 1])-props.trendCompReg[0]}</p>
-                            <p>{(((props.trendCompReg[props.trendCompReg.length - 1])-props.trendCompReg[0])/props.trendCompReg[0] * 100).toFixed(2)}</p>
+                            <p>{(((props.trendCompReg[props.trendCompReg.length-1]/props.trendCompReg[0])-1)*100).toFixed(2)}%</p>
                         </div>
                     </div>
                     <div className="linear-grid-section">
@@ -109,7 +111,7 @@ function LinearGraph(props) {
                             <p>{props.trendCompState[0]}</p>
                             <p>{props.trendCompState[props.trendCompState.length - 1]}</p>
                             <p>{(props.trendCompState[props.trendCompState.length - 1])-props.trendCompState[0]}</p>
-                            <p>{(((props.trendCompState[props.trendCompState.length - 1])-props.trendCompState[0])/props.trendCompReg[0] * 100).toFixed(2)}</p>
+                            <p>{((((props.trendCompState[props.trendCompState.length - 1])/props.trendCompState[0])-1) * 100).toFixed(2)}%</p>
                         </div>
                     </div>
                     <div className="linear-grid-section">
@@ -120,7 +122,7 @@ function LinearGraph(props) {
                             <p>{props.trendCompNation[0]}</p>
                             <p>{props.trendCompNation[props.trendCompNation.length - 1]}</p>
                             <p>{(props.trendCompNation[props.trendCompNation.length - 1])-props.trendCompNation[0]}</p>
-                            <p>{(((props.trendCompNation[props.trendCompNation.length - 1])-props.trendCompNation[0])/props.trendCompReg[0] * 100).toFixed(2)}</p>
+                            <p>{((((props.trendCompNation[props.trendCompNation.length - 1])/props.trendCompNation[0])-1)*100).toFixed(2)}%</p>
                         </div>
                     </div>
                 </div>

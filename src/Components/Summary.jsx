@@ -9,9 +9,11 @@ const Summary = (props) => {
         <div className="summary-container">
             <div className="summary-section">
                 {props.data.jobs.regional}
-                <div>Jobs in {props.data.jobs.year}</div>
                 <div>
-                {Math.floor((props.data.jobs.regional/props.data.jobs.national_avg)*100)} <p>% above national average</p>
+                    Jobs in {props.data.jobs.year}
+                </div>
+                <div>
+                    {Math.floor((props.data.jobs.regional/props.data.jobs.national_avg)*100)} <p>% above national average</p>
                 </div>
             </div>
             <div className="vertical-divider"></div>

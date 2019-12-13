@@ -12,10 +12,10 @@ class Content extends Component {
         summary: {},
         trendComparison: {
             endYear: '',
-            nation: [],
-            regional: [],
             startYear: '', 
-            state: []
+            regional: [],
+            state: [],
+            nation: []
         },
         employingIndustries: {
             industries: [],
@@ -46,10 +46,10 @@ class Content extends Component {
             let stateTrend = myData.trend_comparison.nation;
             let nationTrend = myData.trend_comparison.state;
            
-            for(let i = myData.trend_comparison.start_year; i < myData.trend_comparison.end_year; i++) {
+            for(let i = myData.trend_comparison.start_year; i <= myData.trend_comparison.end_year; i++) {
                 yearArray.push(`${i}`)
             }
-            for(let j = 1; j < regionTrend.length; j++){
+            for(let j = 0; j <= regionTrend.length; j++){
                 regionTrendPerc.push((((regionTrend[j]/regionTrend[0])*100)-100).toFixed(2))
                 stateTrendPerc.push((((stateTrend[j]/stateTrend[0])*100)-100).toFixed(2))
                 nationTrendPerc.push((((nationTrend[j]/nationTrend[0])*100)-100).toFixed(2))
