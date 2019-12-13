@@ -8,8 +8,16 @@ function BarGraph(props) {
     if(props.data){
        industries = props.data.industries.map(i => {
            return (
-               <div>
-                   {i.title}
+               <div className="linear-grid-section">
+                   <div>
+                        {i.title}
+                   </div>
+                   <div>
+                        {i.in_occupation_jobs}
+                   </div>
+                   <div>
+                       {((i.in_occupation_jobs)/i.jobs * 100).toFixed(1)}%
+                   </div>
                </div>
            )
        })
@@ -20,7 +28,7 @@ function BarGraph(props) {
 
     return (
         <div className="bargraph">
-            This is a bar graph
+            <h3>Industries Employing {props.title}</h3>
           {industries}
         </div>
     )

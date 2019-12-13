@@ -44,6 +44,8 @@ function LinearGraph(props) {
         populateChart(dateRange, regionPerc, victoryRegionData)
     }
 
+
+
     return (
         
         <div>
