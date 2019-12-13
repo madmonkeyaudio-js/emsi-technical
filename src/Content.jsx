@@ -22,7 +22,11 @@ class Content extends Component {
             jobs: '', 
             year: ''
         }, 
-        yearRange: []
+        yearRange: [], 
+        regionTrendPerc: [],
+        stateTrendPerc: [],
+        nationTrendPerc: [], 
+
     }
 
     componentDidMount() {
@@ -31,20 +35,36 @@ class Content extends Component {
 
     emsiRequest = () => {
         let yearArray = [];
+        let regionTrendPerc = [];
+        let stateTrendPerc = [];
+        let nationTrendPerc = [];
+
         axios.get('http://www.mocky.io/v2/5a29b5672e00004a3ca09d33')
         .then(response => {
-            let myData = response.data
-            console.log(myData)
+            let myData = response.data;
+            let regionTrend = myData.trend_comparison.regional;
+            let stateTrend = myData.trend_comparison.nation;
+            let nationTrend = myData.trend_comparison.state;
+           
             for(let i = myData.trend_comparison.start_year; i < myData.trend_comparison.end_year; i++) {
-                console.log(yearArray.push(`${i}`))
+                yearArray.push(`${i}`)
             }
+            for(let j = 1; j < regionTrend.length; j++){
+                regionTrendPerc.push((((regionTrend[j]/regionTrend[0])*100)-100).toFixed(2))
+                stateTrendPerc.push((((stateTrend[j]/stateTrend[0])*100)-100).toFixed(2))
+                nationTrendPerc.push((((nationTrend[j]/nationTrend[0])*100)-100).toFixed(2))
+            }
+
             this.setState({
                 occupation: myData.occupation,
                 region: myData.region,
                 summary: myData.summary, 
                 trendComparison: myData.trend_comparison, 
                 employingIndustries: myData.employing_industries, 
-                yearRange: yearArray
+                yearRange: yearArray, 
+                regionTrendPerc, 
+                stateTrendPerc, 
+                nationTrendPerc
             })
         })
         .catch(err => {
@@ -60,10 +80,17 @@ class Content extends Component {
                 summary: this.state.summary, 
                 trendComparison: this.state.trendComparison,
                 employingIndustries: this.state.employingIndustries, 
-                yearRange: this.state.yearRange
+                yearRange: this.state.yearRange,
+                regionTrendPerc: this.state.regionTrendPerc,
+                stateTrendPerc: this.state.stateTrendPerc,
+                nationTrendPerc: this.state.nationTrendPerc
             })
         }
       
+    }
+
+    trendPercentages = () => {
+
     }
 
     render() {
@@ -77,7 +104,12 @@ class Content extends Component {
                     Occupation Summary for {this.state.occupation.title}
                 </header>
                 <Summary data={this.state.summary} title={this.state.occupation.title}/>
-                <LinearGraph data={this.state.trendComparison} yearRange={this.state.yearRange}/>
+                <LinearGraph 
+                    data={this.state.trendComparison} 
+                    yearRange={this.state.yearRange} 
+                    statePerc={this.state.stateTrendPerc} 
+                    nationPerc={this.state.nationTrendPerc} 
+                    regionPerc={this.state.regionTrendPerc}/>
                 <BarGraph data={this.state.employingIndustries}/>
             </div>
         )

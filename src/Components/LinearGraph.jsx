@@ -10,40 +10,72 @@ function LinearGraph(props) {
     //Set date array from props for Victory line
 
     let dateRange = [];
+    let nationPerc = [];
+    let statePerc = [];
+    let regionPerc = [];
+    let victoryNationData = [];
+    let victoryStateData = [];
+    let victoryRegionData = [];
+
     if(props.yearRange) {
-        dateRange = props.yearRange
-        console.log(dateRange)
+        dateRange = props.yearRange;
+        nationPerc = props.nationPerc;
+        statePerc = props.statePerc;
+        regionPerc = props.regionPerc;
+
+        let populateChart = (dateRange, percData, chosenArray) => {
+            for(let i = 0; i < dateRange.length; i++) {
+                if(percData[i] !== "NaN"){
+                    chosenArray.push({
+                        x: dateRange[i],
+                        y: parseInt(percData[i])
+                    })
+                } else {
+                    chosenArray.push({
+                        x: dateRange[i],
+                        y: 0
+                    })
+                }
+            }
+        }
+        console.log(dateRange, nationPerc, statePerc, regionPerc)
+        populateChart(dateRange, nationPerc, victoryNationData);
+        populateChart(dateRange, statePerc, victoryStateData)
+        populateChart(dateRange, regionPerc, victoryRegionData)
     }
 
     return (
         
         <div>
-            This is a linear graph
-            <div>
-
-            </div>
             <div className="regional-trend-graph">
-            <VictoryChart
-                theme={VictoryTheme.material}>
-            <VictoryLine
-            categories={{
-                x: dateRange, 
-                y: ["0", "10", "20", "30", "40"]
-              }}
-                style={{
-                data: { stroke: "#c43a31" },
-                parent: { border: "1px solid #ccc"}
-                }}
-                data={[
-                { x: 1, y: 2 },
-                { x: 2, y: 3 },
-                { x: 3, y: 5 },
-                { x: 4, y: 4 },
-                { x: 5, y: 7 }
-                ]}
-            />
+            <h3>Regional Trends</h3>
+                <VictoryChart
+                    theme={VictoryTheme.material}
+                    height={200}>
+                <VictoryLine
+                    categories={{}}
+                    style={{
+                    data: { stroke: "#21f4e6" },
+                    parent: { border: "1px solid #cbc"}
+                    }}
+                    data={victoryNationData}/>
+                <VictoryLine
+                    categories={{}}
+                    style={{
+                    data: { stroke: "#216bf4" },
+                    parent: { border: "1px solid #cbc"}, 
+                    fontSize: 15
+                    }}
+                    data={victoryStateData}/>
+                <VictoryLine
+                    categories={{}}
+                    style={{
+                    data: { stroke: "#21b1f4" },
+                    parent: { border: "4px solid #cbc"}
+                    }}
+                    data={victoryRegionData}/>
                 </VictoryChart>
-                </div>
+            </div>
             <div className="linear-graph-compare">
                 <div className="label">
                     <div className="label-primary">Region</div>
