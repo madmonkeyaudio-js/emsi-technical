@@ -54,7 +54,7 @@ class Content extends Component {
                 stateTrendPerc.push((((stateTrend[j]/stateTrend[0])*100)-100).toFixed(2))
                 nationTrendPerc.push((((nationTrend[j]/nationTrend[0])*100)-100).toFixed(2))
             }
-
+            
             this.setState({
                 occupation: myData.occupation,
                 region: myData.region,
@@ -86,20 +86,19 @@ class Content extends Component {
                 nationTrendPerc: this.state.nationTrendPerc
             })
         }
-      
     }
 
     render() {
         return (
             <div>
                 <header>
-                    Occupation Overview
-                    <br/>
-                    {this.state.occupation.title} in {this.state.region.title}
-                    <br/>
-                    Occupation Summary for {this.state.occupation.title}
+                    <h2>Occupation Overview</h2>
+                    <p>{this.state.occupation.title} in {this.state.region.title}</p> 
+                    <h4>Occupation Summary for {this.state.occupation.title}</h4>    
                 </header>
-                <Summary data={this.state.summary} title={this.state.occupation.title}/>
+                <Summary 
+                    data={this.state.summary} 
+                    title={this.state.occupation.title}/>
                 <LinearGraph 
                     data={this.state.trendComparison} 
                     yearRange={this.state.yearRange} 

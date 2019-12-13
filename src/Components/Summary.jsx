@@ -8,23 +8,23 @@ const Summary = (props) => {
     return (
         <div className="summary-container">
             <div className="summary-section">
-                {props.data.jobs.regional}
+                <h4>{props.data.jobs.regional}</h4>
                 <div>
-                    Jobs in {props.data.jobs.year}
+                    Jobs ({props.data.jobs.year})
                 </div>
                 <div>
-                    {Math.floor((props.data.jobs.regional/props.data.jobs.national_avg)*100)} <p>% above national average</p>
+                    <p>{Math.floor((props.data.jobs.regional/props.data.jobs.national_avg)*100)}% above national average</p>
                 </div>
             </div>
             <div className="vertical-divider"></div>
             <div className="summary-section">
-                <p>+{props.data.jobs_growth.regional}</p>
-                <p>% change (2013-2018)</p>
+                <h4>+{props.data.jobs_growth.regional}%</h4>
+                <p>% change ({props.data.jobs_growth.start_year} - {props.data.jobs_growth.end_year})</p>
                 <p>+{props.data.jobs_growth.national_avg}</p>
             </div>
             <div className="vertical-divider"></div>
             <div className="summary-section">
-                <p>${props.data.earnings.regional}/hour</p>
+                <h4>${props.data.earnings.regional}/hour</h4>
                 <p>Median Hourly Earnings</p>
                 <p>Nation: ${props.data.earnings.national_avg}/hour</p>
             </div>

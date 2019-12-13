@@ -6,9 +6,7 @@ function LinearGraph(props) {
     if (!props.data.nation) { 
         return <div><p>Content Unavailable</p></div>
     }
-
-    //Set date array from props for Victory line
-
+    
     let dateRange = [];
     let nationPerc = [];
     let statePerc = [];
@@ -44,7 +42,6 @@ function LinearGraph(props) {
         populateChart(dateRange, nationPerc, victoryNationData);
         populateChart(dateRange, statePerc, victoryStateData)
         populateChart(dateRange, regionPerc, victoryRegionData)
-
     }
 
     return (
@@ -100,7 +97,7 @@ function LinearGraph(props) {
                             <p>{props.trendCompReg[0]}</p>
                             <p>{props.trendCompReg[props.trendCompReg.length - 1]}</p>
                             <p>{(props.trendCompReg[props.trendCompReg.length - 1])-props.trendCompReg[0]}</p>
-                            <p>{(((props.trendCompReg[props.trendCompReg.length-1]/props.trendCompReg[0])-1)*100).toFixed(2)}%</p>
+                            <p>{(((props.trendCompReg[props.trendCompReg.length-1]/props.trendCompReg[0])-1)*100).toFixed(1)}%</p>
                         </div>
                     </div>
                     <div className="linear-grid-section">
@@ -111,7 +108,7 @@ function LinearGraph(props) {
                             <p>{props.trendCompState[0]}</p>
                             <p>{props.trendCompState[props.trendCompState.length - 1]}</p>
                             <p>{(props.trendCompState[props.trendCompState.length - 1])-props.trendCompState[0]}</p>
-                            <p>{((((props.trendCompState[props.trendCompState.length - 1])/props.trendCompState[0])-1) * 100).toFixed(2)}%</p>
+                            <p>{((((props.trendCompState[props.trendCompState.length - 1])/props.trendCompState[0])-1) * 100).toFixed(1)}%</p>
                         </div>
                     </div>
                     <div className="linear-grid-section">
@@ -122,7 +119,7 @@ function LinearGraph(props) {
                             <p>{props.trendCompNation[0]}</p>
                             <p>{props.trendCompNation[props.trendCompNation.length - 1]}</p>
                             <p>{(props.trendCompNation[props.trendCompNation.length - 1])-props.trendCompNation[0]}</p>
-                            <p>{((((props.trendCompNation[props.trendCompNation.length - 1])/props.trendCompNation[0])-1)*100).toFixed(2)}%</p>
+                            <p>{((((props.trendCompNation[props.trendCompNation.length - 1])/props.trendCompNation[0])-1)*100).toFixed(1)}%</p>
                         </div>
                     </div>
                 </div>
